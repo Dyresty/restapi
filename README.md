@@ -1,82 +1,158 @@
 # REST API
-Small projects to learn and test functionality of REST api
 
-REST API<br>
-API - Application Programming Interface - Way for two computers(client and server) to communicate<br>
-REST - Representational State Transfer - Standardised software architecture style. Specific type of API<br>
-REST API - Common set of loosely set rules for web API
+Small projects to learn and test functionality of REST API.
+
+---
+
+## REST API
+
+**API** - Application Programming Interface — A way for two computers (client and server) to communicate  
+**REST** - Representational State Transfer — A standardized software architecture style; a specific type of API  
+**REST API** - A common set of loosely defined rules for web APIs
+
+---
+
+## Why Use APIs Instead of Direct Database Access?
 
 APIs are used instead of direct database access by the clients. This is done for:
-1. Security
-2. Versatility (Various types of applicataions, same backend)
-3. Modularity
-4. Interoperability (For automation, comfort, customization)
 
-Communication of the Client and server is facilitated by these APIs.<br>
-REST API does it without State.<br>
-Stateless - Two parties do not store any info about each other and every request-response cycle is independent from all other communication.<br><br>
-Stateful application/API/WebService stores data from client on its own server.<br>
-While Stateless Rest Architecture requires that client's state is not stored on the server.<br>
-Each request made by client must include all the information necessary for that particular HTTP method. 
+1. **Security**
+2. **Versatility** (Various types of applications, same backend)
+3. **Modularity**
+4. **Interoperability** (For automation, comfort, customization)
 
-Restful web Service 
-- Simple / Standardised method of communication<br>
-  No need to worry about formatting data/requests
-- Scalable and Statteless
-- High Performance
-  Mostly as it supports caching, also statelessness.
+---
 
-HTTP://XYZ.com/API/ABC -> ABC would be the resource/endpoint - where we want to do the CRUD operations
+## Statelessness in REST
 
-In a REST API architecture, Client requests from the server, and the Server sends a response 
-For REST API, HTTP methods are the equivalent of CRUD (Create, Read, Update, Delete)
-1. Post (Create operation for new entry)
-2. Get (Read operation)
-3. Put (Update/Replace)
-4. Delete (Delete)
+Communication between the client and server is facilitated by these APIs.  
+REST API does it without state.
 
-Post is the only one of these that is not Idempotent. Idempotent means that the operation can be repeated multiple times with the same results.<br><br>
+- **Stateless** – Two parties do not store any info about each other. Every request-response cycle is independent from all other communication.
+- **Stateful** – Stores data from the client on the server.
 
-Request will have a Header (Maybe with auth data, API key), Operation, Endpoint, Parameter/Body.<br>
-Response will have a status code, Header, Body (Typically JSON). 
+While Stateless REST architecture requires that the client's state is not stored on the server,  
+**each request made by the client must include all the information necessary for that particular HTTP method.**
 
-HTTP Status codes - Used in the server responsed in the Rest Architecture
-- Code 200s -> Successful
-- Code 400s -> Client Side Error
-- Code 500s -> Server Side Error
+---
 
-URIs - Uniform Resource Identifiers - To access different endpoints.<br>
-It identifies every resource in the Rest architecture.<br>
-URN - Name (Unique like ISBN of books)<br>
-URL - Typical web address<br>
+## RESTful Web Service
 
-URI Best practices. 
--> Standardised. Use the version number if it exists. 
-- Forward slashes indicate hierarchy.
-- Use plural names for branches
-- Use hyphens for multiple words
-- Use lowercase
-- Refrain from using file extensions.
+- Simple / Standardized method of communication  
+  → No need to worry about formatting data/requests  
+- Scalable and Stateless  
+- High Performance  
+  → Mostly because it supports caching and is stateless
 
-Alternatives for Rest API - GraphQL, gRPC.<br>
-RestApi used with Postman, Insomnia, Curl for testing and other tools such as Express(for NodeJS).<br>
-RestApi can be used with JS, Py, NodeJS.
+---
 
-REST API
-+ Easy to Learn
-+ Wide Range of data transfers (JSON, XML)
-+ Statelessness (For a simple client experience)
-+ Scalability
-- Sessions not being maintained cuz of statelessness
-- A lack of built-in security
-- Need to be versioned for backwards compatibility
-- Consistency in URIs difficult to maintain for complex projects. 
+## REST API Endpoint Structure
 
-JSON - Javascript Object Notation<br>
-It is the same as an Object in JS and a Dictionary in Python
-- Data Representation Format
-- Commonly used fr APIs and configs
-- Lightweight, easy to read/write, nesting of data types can be done easily.
-- Integrates easily with most languages.
+Example:  
+`HTTP://XYZ.com/API/ABC` → `ABC` would be the **resource/endpoint** — where we want to do the CRUD operations.
 
-JSON does not care about type of the value given for key-value pair. But the key-value pair needs to exist. 
+---
+
+## HTTP Methods = CRUD Operations
+
+In a REST API architecture, the client requests from the server, and the server sends a response.  
+The following HTTP methods correspond to CRUD operations:
+
+1. **POST** – Create operation for new entry
+2. **GET** – Read operation
+3. **PUT** – Update / Replace
+4. **DELETE** – Delete
+
+**Note:**  
+`POST` is the only one of these that is **not idempotent**.  
+_Idempotent_ means that the operation can be repeated multiple times with the same results.
+
+---
+
+## REST Request and Response Structure
+
+**Request includes:**
+- Header (possibly with authentication data, API key)
+- Operation
+- Endpoint
+- Parameter / Body
+
+**Response includes:**
+- Status Code
+- Header
+- Body (typically in JSON)
+
+---
+
+## HTTP Status Codes
+
+Used in the server response in the REST architecture:
+
+- **2xx** – Successful
+- **4xx** – Client-Side Error
+- **5xx** – Server-Side Error
+
+---
+
+## URIs (Uniform Resource Identifiers)
+
+Used to access different endpoints.  
+URIs identify every resource in the REST architecture.
+
+- **URN** – Name (Unique like ISBN of books)
+- **URL** – Typical web address
+
+### URI Best Practices
+
+- Standardized: Use the version number if it exists
+- Forward slashes indicate hierarchy
+- Use **plural names** for branches
+- Use **hyphens** for multiple words
+- Use **lowercase**
+- Refrain from using file extensions
+
+---
+
+## Alternatives to REST API
+
+- **GraphQL**
+- **gRPC**
+
+---
+
+## Tools
+
+- **Postman**, **Insomnia**, **Curl** — For testing
+- **Express (for NodeJS)** — Lightweight framework
+- REST API can be used with **JavaScript**, **Python**, **NodeJS**, etc.
+
+---
+
+## Pros and Cons of REST API
+
+### Advantages:
+- Easy to learn
+- Wide range of data transfers (JSON, XML)
+- Statelessness → Simple client experience
+- Scalable
+
+### Disadvantages:
+- Sessions not being maintained due to statelessness
+- Lack of built-in security
+- Need to be versioned for backward compatibility
+- Consistency in URIs can be difficult to maintain for complex projects
+
+---
+
+## JSON (JavaScript Object Notation)
+
+- Data representation format
+- Commonly used for APIs and configurations
+- Lightweight, easy to read/write
+- Supports nesting of data types
+- Integrates easily with most languages
+
+JSON is the same as an **object in JavaScript** and a **dictionary in Python**.  
+It does **not** care about the type of the value given for a key-value pair, but the key-value pair **must exist**.
+
+---
